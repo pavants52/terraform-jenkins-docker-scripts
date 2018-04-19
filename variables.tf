@@ -12,6 +12,5 @@ variable "aws_ami" {
 }
 
 variable "key_name" {
-  secKey= "padmavathy"
   description = "Name of the SSH keypair to use in AWS."
 }
