@@ -11,6 +11,20 @@ systemctl enable docker
 systemctl start docker
 usermod -aG docker ubuntu
 
+#install docker-compose
+sudo curl -L https://github.com/docker/compose/releases/download/1.20.1/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+cd /usr/local/bin
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+#install terraform
+sudo apt-get install unzip
+wget  https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
+unzip terraform_0.11.7_linux_amd64.zip
+mv terraform /usr/local/bin
+rm terraform_0.11.7_linux_amd64.zip
+terraform --version
+
 # run jenkins
 mkdir -p /var/jenkins_home
 chown -R 1000:1000 /var/jenkins_home/
