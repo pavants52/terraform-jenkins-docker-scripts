@@ -1,0 +1,17 @@
+
+provider "aws" {
+        region = "us-west-2"
+ }
+
+resource "aws_s3_bucket" "b" {
+  bucket = "bucket-tallam"
+  acl    = "private"
+
+  tags {
+    Name         = "pavan tallam 52"
+    Environment  = "Dev-Env"
+}
+versioning {
+    enabled = true
+}
+}
